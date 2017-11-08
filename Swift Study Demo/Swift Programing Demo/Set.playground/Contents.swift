@@ -12,14 +12,14 @@ import Cocoa
 var groceryBag: Set = ["Apples", "Oranges", "Pineapple"]
 
 for food in groceryBag {
-//    print(food)
+    print(food)
 }
 
 let hasBananas = groceryBag.contains("Bananas")
 let friendsGroceryBag = Set(["Bananas", "Cereal", "Milk", "Oranges"])
 
 // 取并集(生成新的集合)
-let commonGroceryBag = groceryBag.union(friendsGroceryBag)
+var commonGroceryBag = groceryBag.union(friendsGroceryBag)
 // 取并集(改动原有实例)
 groceryBag.formUnion(friendsGroceryBag)
 
@@ -40,6 +40,13 @@ let myCities = Set(["北京", "上海", "南京", "芜湖", "广州"])
 let yourCities = Set(["北京", "南京"])
 let isSuper = myCities.isSuperset(of: yourCities)
 let isSuber = yourCities.isSubset(of: myCities)
+
+// 集合的操作
+// 1.并集 formUnion(_:)
+// 2.交集 formIntersection(_:)
+// 3.互不想交 isDisjoint(with:)
+// 4.判断子集 isSubset(of: )
+// 5.判断父集 isSuperset(of: )
 
 
 

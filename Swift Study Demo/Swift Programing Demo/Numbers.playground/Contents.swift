@@ -37,8 +37,3 @@ arr
 
 Int("string")
 
-var dict = [String: Int]()
-dict["name"] = 2
-dict
-dict["name"] = nil
-dict

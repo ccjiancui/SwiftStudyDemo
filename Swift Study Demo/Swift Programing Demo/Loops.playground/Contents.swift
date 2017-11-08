@@ -11,13 +11,13 @@ for i in 1...5 {
 
 // 使用带 where 子句的 for-in 循环
 for i in 1...100 where i % 3 == 0 {
-//    print(i)
+    print(i)
 }
 
 // 如果没有 where 子句, 语句就没有那么优雅
 for i in 1...100 {
     if i % 3 == 0 {
-//        print(i)
+        print(i)
     }
 }
 

@@ -9,7 +9,7 @@ func printPersonalGreetings(to names: String...) {
         print("Hello \(name)")
     }
 }
-//printPersonalGreetings(to: "Chirs", "Pat")
+printPersonalGreetings(to: "Chirs", "Pat")
 printPersonalGreetings()
 
 
