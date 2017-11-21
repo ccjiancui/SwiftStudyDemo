@@ -65,4 +65,34 @@ areaOfTriangleWith(base: 3.0, height: 5.0)
 // 外部看不见 divide() 函数
 // 把业务逻辑相关的函数放在一起
 
+// 元祖(tuple)是开发者认为具有逻辑相关的两个或多个值得有限组合
+
+// 5.多个返回值
+
+/// 区分奇数和偶数
+///
+/// - Parameter numbers: 数字数组
+/// - Returns: 偶数和奇数
+func sortEvenOddNumbers(_ numbers: [Int]) -> (evens: [Int], odds: [Int]) {
+    var evens = [Int]()
+    var odds = [Int]()
+    for number in numbers {
+        if number % 2 == 0 {
+            evens.append(number)
+        } else {
+            odds.append(number)
+        }
+    }
+    return (evens, odds)
+}
+
+let aBunchOfNumbers = [10, 1, 4, 3, 57, 43, 87, 26, 123, 111]
+let theSortNumbers = sortEvenOddNumbers(aBunchOfNumbers)
+// 6.可选返回值类型
+// 7,提前退出函数
+// 8.函数类型
+
+
+
+
 //: [Next](@next)
