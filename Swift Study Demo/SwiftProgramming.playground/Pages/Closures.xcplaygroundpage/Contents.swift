@@ -113,6 +113,13 @@ gorwBy(500)
 let anotherGorwBy = gorwBy
 anotherGorwBy(500)
 
+// 另外一个城市人口
+var anotherCityPopulation = 20_680
+let gorwByanotherCity = makePopulationTracker(forInitialPopulation: anotherCityPopulation)
+gorwByanotherCity(4_000)
+gorwByanotherCity(4_000)
+gorwByanotherCity(4_000)
+
 // 函数式编程
 // 1.函数是一等公民: 和其他类型一样, 可以作为参数, 也可以作为返回值
 // 2.纯函数
