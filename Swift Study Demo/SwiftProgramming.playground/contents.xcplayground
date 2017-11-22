@@ -13,7 +13,7 @@
         <page name='Functions'/>
         <page name='Function Types'/>
         <page name='Closures'/>
-        <page name='Type Methods'/>
         <page name='Enumerations'/>
+        <page name='Type Methods'/>
     </pages>
 </playground>

@@ -4,38 +4,44 @@ import Foundation
 
 // 闭包的简写方式
 
-let volunteerCounts = [1, 3, 40, 32, 2, 53, 77, 13]
+var volunteerCounts = [1, 3, 40, 32, 2, 53, 77, 13]
 
 // 函数是有名字的闭包
 func sortAscending(_ i: Int, _ j: Int) -> Bool {
     return i < j
 }
 
-let volunteerSorted1 = volunteerCounts.sorted(by: sortAscending)
-//let volunteerSorted1 = volunteerCounts.sorted(by: <#T##(Int, Int) -> Bool#>)
-
+// sorted(by: <#T##(Int, Int) -> Bool#>)
+let volunteerSorted = volunteerCounts.sorted(by: sortAscending)
 
 // 完整闭包
+let volunteerSorted1 = volunteerCounts.sorted(by: { (i: Int, j: Int) -> Bool in
+    return i < j
+})
+
+// 尾随闭包语法
+// 如果一个闭包是以一个函数的最后一个参数传递的, 那么它就可以在函数的圆括号以外内联.
+// 因为 sorted(by:) 只接收一个参数,所以根本不需要圆括号. 之所以可以省略闭包的参数名, 是因为尾随闭包语法允许这么做
 let volunteerSorted2 = volunteerCounts.sorted { (i: Int, j: Int) -> Bool in
     return i < j
 }
 
-
-// 利用类型推断简写闭包
-// 1. 移除了两个参数和返回值的类型信息.返回值类型可以移除是因为编译器知道检查 i < j 是否成立返回 true 或 false
+// 1. 利用类型推断简写闭包, 移除了两个参数和返回值的类型信息.返回值类型可以移除是因为编译器知道检查 i < j 是否成立返回 true 或 false
 // 2. 闭包表达式放在一行
 // 3. 移除关键字 return. 只有一个表达式才能移除, 存在更多表达式, 显式显示 return 是必需的
 let volunteerSorted3 = volunteerCounts.sorted { i, j in i < j }
-volunteerSorted3
-
 
 // 利用参数的快捷语法
 let volunteerSorted4 = volunteerCounts.sorted { $0 < $1 }
-volunteerSorted4
 
-// 以上都使用了尾随闭包的语法
-// 代码简洁是智慧的灵魂, 不能为了简洁而简洁, 保持代码的可读性和可维护性永远是最重要的.
+// 代码简洁是智慧的灵魂, 不过分追求简洁, 保持代码的可读性和可维护性永远是最重要的.
 
+// test1, 数组原地从小到大排序
+volunteerCounts.sort()
+volunteerCounts
+
+// test2, 数组排序从小到大简单方法
+let volunteerSorted5 = volunteerCounts.sorted()
 
 // 3.函数作为返回值
 
@@ -121,10 +127,50 @@ gorwByanotherCity(4_000)
 gorwByanotherCity(4_000)
 
 // 函数式编程
-// 1.函数是一等公民: 和其他类型一样, 可以作为参数, 也可以作为返回值
-// 2.纯函数
+// 1.函数是一等公民: 和其他类型一样, 可以作为参数传递给别的函数, 可以存储在变量中.
+// 2.纯函数: 函数没有副作用; 给定同样的输入, 函数永远返回同样的输出, 而且不会修改程序中其他地方的状态.
 // 3.不可变性" 不鼓励可变性, 因为值可变的数据更难分析
 // 4.强类型: 强类型系统能增加代码的运行时安全性, 语言的类型系统会在编译时得到检查
+// Swift 支持以上所有特性
+// 函数式编程能让代码更简洁, 表达力更强. 通过鼓励不可变性和编译时类型检查, 代码在运行时也更安全. 函数式编程的这些特点还让代码更易读, 更易维护.
 
+// 高阶函数
+
+// 1.map 一个函数作用在数组的每一个元素上并返回另一个数组
+// 2.filter 通过函数过滤数组返回过滤后的数组
+// 3.reduce 将元素合并到一个总和的值中
+
+/// 各个区的人口
+let precinctPopulation = [1244, 2021, 2157]
+// 人口的增长速度是2
+let projectedPopulations = precinctPopulation.map { (population: Int) -> Int in
+    return population * 2
+}
+
+// 简写 参数类型推断省略类型声明, 只有一行表达式省略 return
+//let projectedPopulations = precinctPopulation.map { (population) -> Int in
+//    population * 2
+//}
+
+let projectedPopulations2 = precinctPopulation.map { $0 * 2 }
+projectedPopulations2
+
+// 过滤人口超过4000的地区
+let bigProjections = projectedPopulations.filter { (projection: Int) -> Bool in
+    return projection > 4000
+}
+
+// 简写 filter
+let bigProjections2 = projectedPopulations.filter { $0 > 4000 }
+bigProjections2
+
+
+let totalProjection = projectedPopulations.reduce(0) { (accumulatedProjection: Int, precinctProjection: Int) -> Int in
+    return accumulatedProjection + precinctProjection
+}
+
+// 简写 reduce
+let totalProjection2 = projectedPopulations.reduce(0) { $0 + $1 }
+totalProjection2
 
 //: [Next](@next)
