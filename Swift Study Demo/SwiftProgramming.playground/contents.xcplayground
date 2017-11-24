@@ -15,5 +15,6 @@
         <page name='Closures'/>
         <page name='Enumerations'/>
         <page name='Type Methods'/>
+        <page name='Mutating'/>
     </pages>
 </playground>

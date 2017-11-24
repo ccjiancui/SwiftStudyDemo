@@ -14,11 +14,12 @@ struct Town {
     /// 人口
     var population = 5_422
     
-    /// 路灯
+    /// 红绿灯
     var numberOfStopLights = 4
     
+    /// 打印描述
     func printDescription() {
-        print("population: \(population), number of stopLights: \(numberOfStopLights)")
+        print("人口数为: \(population), 红绿灯数为: \(numberOfStopLights)")
     }
     
     mutating func changePopulation(by amount: Int) {

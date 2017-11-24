@@ -13,11 +13,12 @@ class Monster {
     var town: Town?
     var name = "Monster"
     
+    /// 侵扰小镇
     func terrorizeTown() {
         if town != nil {
-            print("\(name) is terrorizing a town!")
+            print("\(name) 侵袭了一个小镇!\n")
         } else {
-            print("\(name) hasn't found a town to terrorize yet...")
+            print("\(name) 还没有找到可以侵袭的小镇...\n")
         }
     }
 }
