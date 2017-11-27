@@ -2,15 +2,18 @@
 //  main.swift
 //  MonsterTown
 //
-//  Created by che300 on 2017/8/22.
+//  Created by CuiJian on 2017/8/22.
 //  Copyright © 2017年 CuiJian. All rights reserved.
 //
 
 import Foundation
 
 var myTown = Town()
-myTown.changePopulation(by: 500)
-myTown.printDescription()
+let myTownSize = myTown.townSize
+print(myTownSize)
+myTown.changePopulation(by: 1_000_000)
+print("Size: \(myTown.townSize); population: \(myTown.population)")
+
 
 let fredTheZombie = Zombie()
 fredTheZombie.town = myTown
@@ -22,6 +25,8 @@ fredTheVampire.town = myTown
 fredTheVampire.terrorizeTown()
 fredTheVampire.town?.printDescription()
 
-print(Zombie.makeSpookyNoise())
-print(GiantZombie.makeSpookyNoise())
-
+print(Monster.makeSpookyNoise)
+print(Zombie.makeSpookyNoise)
+if Zombie.isTerrifying {
+    print("快跑哦!")
+}

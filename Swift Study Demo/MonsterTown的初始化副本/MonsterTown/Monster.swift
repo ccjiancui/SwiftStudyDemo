@@ -16,7 +16,15 @@ class Monster {
     }
     
     var town: Town?
-    var name = "Monster"
+    var name: String
+    
+    // 类的指定初始化方法
+    required init(town: Town?, monsterName: String) {
+        self.town = town
+        name = monsterName
+    }
+    
+    
     
     /// 受害者数量(计算属性 读写)
     var victimpol: Int {

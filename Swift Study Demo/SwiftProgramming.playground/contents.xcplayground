@@ -16,5 +16,7 @@
         <page name='Enumerations'/>
         <page name='Type Methods'/>
         <page name='Mutating'/>
+        <page name='Properties'/>
+        <page name='Initialization'/>
     </pages>
 </playground>

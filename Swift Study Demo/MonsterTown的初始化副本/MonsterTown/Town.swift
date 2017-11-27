@@ -12,20 +12,17 @@ import Foundation
 struct Town {
     
     /// 区域
-    static let region = "south"
+    let region: String
     
     /// 人口
-    var population = 5_422 {
-//        didSet(oldPopolation) {
-//            print("人口已经从\(oldPopolation)变化为\(population)")
-//        }
+    var population: Int {
         didSet {
             print("人口已经从\(oldValue)变化为\(population)")
         }
     }
     
     /// 红绿灯
-    var numberOfStopLights = 4
+    var numberOfStopLights: Int
     
     // 嵌套类型
     enum Size {
@@ -48,9 +45,23 @@ struct Town {
         }
     }
     
+    // 自定义初始化方法
+    init?(region: String, population: Int, stopLights: Int) {
+        self.region = region
+        self.population = population
+        numberOfStopLights = stopLights
+    }
+    
+    // 委托初始化方法
+    init?(population: Int, stopLights: Int) {
+        self.init(region: "south", population: population, stopLights: stopLights)
+    }
+    
+    
+    
     /// 打印描述
     func printDescription() {
-        print("人口数为: \(population), 红绿灯数为: \(numberOfStopLights)")
+        print("人口数为: \(population), 红绿灯数为: \(numberOfStopLights), 区域\(region)")
     }
     
     /// 改变人口
