@@ -18,5 +18,6 @@
         <page name='Mutating'/>
         <page name='Properties'/>
         <page name='Initialization'/>
+        <page name='值类型与引用类型'/>
     </pages>
 </playground>
