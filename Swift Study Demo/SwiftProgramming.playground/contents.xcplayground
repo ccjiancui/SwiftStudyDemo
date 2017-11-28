@@ -19,5 +19,6 @@
         <page name='Properties'/>
         <page name='Initialization'/>
         <page name='值类型与引用类型'/>
+        <page name='写时复制'/>
     </pages>
 </playground>
