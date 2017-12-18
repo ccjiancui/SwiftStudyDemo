@@ -21,5 +21,6 @@
         <page name='值类型与引用类型'/>
         <page name='写时复制'/>
         <page name='Protocols'/>
+        <page name='ErrorHandling'/>
     </pages>
 </playground>
