@@ -22,5 +22,6 @@
         <page name='写时复制'/>
         <page name='Protocols'/>
         <page name='ErrorHandling'/>
+        <page name='Generics'/>
     </pages>
 </playground>
