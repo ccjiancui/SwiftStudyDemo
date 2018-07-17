@@ -1,6 +1,7 @@
 //: [Previous](@previous)
 
 import Foundation
+import UIKit
 
 // MARK: - 整数
 
@@ -38,5 +39,19 @@ if d1 + 0.1 == 1.2 {
 }
 
 // 永远不要使用浮点数表示那些必须精确的数值（比如金额计算）
+
+// Swift4.1 之后
+// 服务端返回的 JSON 数据解析时候，浮点类型都会被解析对应为平台默认 Double 类型， 如果使用 as？Float 就会发生失败
+let height = 1.2
+type(of: height)
+
+let newHeight1 = height as? Float
+let newHeight2 = Float(height)
+let newHeight3 = height as? CGFloat
+
+
+let dict = NSDictionary(dictionary: ["price" : 5.56])
+let priceValue = dict["price"] as? Float
+let newPriceValue = dict["price"] as? Double
 
 //: [Next](@next)

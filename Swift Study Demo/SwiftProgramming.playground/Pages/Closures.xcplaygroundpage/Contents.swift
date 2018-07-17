@@ -31,9 +31,9 @@ let volunteerSorted2 = volunteerCounts.sorted { (i: Int, j: Int) -> Bool in
 // 3. 移除关键字 return. 只有一个表达式才能移除, 存在更多表达式, 显式显示 return 是必需的
 let volunteerSorted3 = volunteerCounts.sorted { i, j in i < j }
 
-// 利用参数的快捷语法
+//Swift提供了快捷参数名，可以在内联闭包 表达式中引用。这些快捷参数名和显式声明的参数类似：类型和值都一样。编译器的类型推断能 力让它知道闭包接受的参数个数和类型，这意味着不需要给参数命名。
+// 利用参数名的快捷语法 内联闭包表达式中使用
 let volunteerSorted4 = volunteerCounts.sorted { $0 < $1 }
-
 // 代码简洁是智慧的灵魂, 不过分追求简洁, 保持代码的可读性和可维护性永远是最重要的.
 
 // test1, 数组原地从小到大排序

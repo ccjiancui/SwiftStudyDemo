@@ -66,12 +66,11 @@ if case 18...35 = age {
     print("Cool demographic")
 }
 
-// 多个条件的 if-case
 if case 18...35 = age, age >= 21 {
     print("In cool demographic and of drinking age")
-} else {
-    print("未成年不能喝酒哦")
 }
+
+// 只应用于需要switch模式匹配能力, 同时又不需要关心其他情况, 如果不是, 那应该直接使用 if-else
 
 // MARK: - 判断点位与坐标系的位置
 
