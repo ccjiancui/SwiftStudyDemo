@@ -29,7 +29,7 @@ default:
     errorString = "Unexpected error encountered."
 }
 
-// MARK: - 元祖匹配
+// MARK: - 利用元祖进行模式匹配
 
 let firstErrorCode = 404
 let secondErrorCode = 200
