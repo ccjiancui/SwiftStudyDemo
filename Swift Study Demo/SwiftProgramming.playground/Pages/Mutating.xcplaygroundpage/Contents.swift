@@ -41,15 +41,21 @@ struct Person {
     var firstName = "Matt"
     var lastName = "Mathias"
     
-    mutating func changeTo(firstName: String, lastName: String) {
-        self.firstName = firstName
-        self.lastName = lastName
+    func changeTo(firstName: String, lastName: String) {
+//        self.firstName = firstName
+//        self.lastName = lastName
     }
+    
+//    mutating func changeTo(firstName: String, lastName: String) {
+//        self.firstName = firstName
+//        self.lastName = lastName
+//    }
 }
 
 // 创建一个实例
 var p = Person()
-
+//什么是方法
+// 方法是和类型关联的函数.方法还接收一个隐式参数 self. 所有的 swift 方法都有 self 参数, 用来访问实例
 // 方法是会接收一个隐式参数 self
 // 将 changeTo(firstName:lastName:) 方法付给一个常量, 不是调用实例方法
 let changeName = Person.changeTo
@@ -67,4 +73,14 @@ p.firstName
 p.changeTo(firstName: "taylor", lastName: "Swift")
 p.firstName
 
+struct god {
+    static func getName() -> String {
+        return "god"
+    }
+}
+
+let tip = god.getName
+
 //: [Next](@next)
+
+

@@ -37,7 +37,7 @@ numbers.forEach { print($0) }
 for (index, number) in numbers.enumerated() {
 }
 
-let index = numbers.index { $0 == 4 }
+let index = numbers.firstIndex { $0 == 4 }
 index
 
 print(numbers.filter { $0 % 2 == 0})
@@ -50,6 +50,7 @@ numbers.min()
 numbers.starts(with: [1, 3])
 numbers.elementsEqual([1, 2])
 numbers.contains(5)
+numbers.sort()
 numbers.sorted()
 numbers.sorted(by: >)
 numbers.reduce(0, +)
